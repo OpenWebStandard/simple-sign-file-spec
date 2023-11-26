@@ -21,17 +21,17 @@ Schema: `https://openwebstandard.org/simple-sign-file/v1`
 | certificates        | Certificate[] | `Required` X509 Certificate in PEM, Singing Cert\[, Intermediate Cert], RootCert |
 
 
-| Tag | Filed           |
-|-----|-----------------|
-| 0   | Filename        |
-| 1   | Timestamp       |
-| 2   | Attributes      |
-| 3   | Comment         |
-| 255 | Digest          |
+| Tag | Filed           | Comment                           |
+|-----|-----------------|-----------------------------------|
+| 0   | Filename        | -                                 |
+| 1   | Timestamp       | Type `i64`, serialize in BE order |
+| 2   | Attributes      | -                                 |
+| 3   | Comment         | -                                 |
+| 255 | Digest          | -                                 |
 
-Signature content:
+Signature content (Tobe Signed):
 ```
-TLF(*) = Tag || Length in u16 || Value of *
+TLV(*) = Tag in u8 || Length in u16 || UTF-8 Bytes of *
 TobeSigned = "v1" || TLV(filename) || TLV(timestamp) || TLV(attributes) || TLV(comment) || TLV(digest)
 ```
 
