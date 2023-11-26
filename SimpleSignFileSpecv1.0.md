@@ -5,7 +5,7 @@ Schema: `https://openwebstandard.org/simple-sign-file/v1`
 
 | Field               | Type        | Comment                                      |
 |---------------------|-------------|----------------------------------------------|
-| specification       | String      | `Required` Constant, URI of sepecification   |
+| specification       | String      | `Required` Constant, Value is Schema         |
 | version             | String      | `Required` Constant, `v1`                    |
 | filename            | String      | `Optional` Filename                          |
 | digest              | String      | `Required` Digest, e.g. `sha256-*`           |
