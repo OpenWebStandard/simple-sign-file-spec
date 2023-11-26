@@ -2,6 +2,40 @@ Simple Sign File Spec v1.0
 
 Schema: `https://openwebstandard.org/simple-sign-file/v1`
 
+
+| Field               | Type        | Comment                                      |
+|---------------------|-------------|----------------------------------------------|
+| specification       | String      | `Required` Constant, URI of sepecification   |
+| version             | String      | `Required` Constant, `v1`                    |
+| filename            | String      | `Optional` Filename                          |
+| digest              | String      | `Required` Digest, e.g. `sha256-*`           |
+| timestamp           | Long        | `Required` Unix Epoch Time in millis         |
+| attributes          | String      | `Optional` Attributes, for future us         |
+| comment             | String      | `Optional` Comment                           |
+| signatures          | Signature[] | `Required` Signatures, currently one         |
+
+| Field               | Type          | Comment                                           |
+|---------------------|---------------|---------------------------------------------------|
+| algorithm           | String        | `Required` Sign algorithm, e.g. `SHA256withECDSA` | 
+| signature           | String        | `Required` Signature in base64                    |
+| certificates        | Certificate[] | `Required` X509 Certificat in PEM                 |
+
+
+| Tag | Filed           |
+|-----|-----------------|
+| 0   | Filename        |
+| 1   | Timestamp       |
+| 2   | Attributes      |
+| 3   | Comment         |
+| 255 | Digest          |
+
+Signature content:
+```
+TLF(*) = Tag || Length in u16 || Value of *
+TobeSigned = "v1" || TLV(filename) || TLV(timestamp) || TLV(attributes) || TLV(comment) || TLV(digest)
+```
+
+
 Signature file `*.simple-sig` sample:
 ```json
 {
