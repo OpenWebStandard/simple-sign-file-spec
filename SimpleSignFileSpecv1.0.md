@@ -27,7 +27,7 @@ Schema: `https://openwebstandard.org/simple-sign-file/v1`
 | 1   | Timestamp       | Type `i64`, serialize in BE order |
 | 2   | Attributes      | -                                 |
 | 3   | Comment         | -                                 |
-| 255 | Digest          | -                                 |
+| 254 | Digest          | -                                 |
 
 Signature content (Tobe Signed):
 ```
