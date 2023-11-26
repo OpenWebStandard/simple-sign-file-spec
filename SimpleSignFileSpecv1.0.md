@@ -14,11 +14,11 @@ Schema: `https://openwebstandard.org/simple-sign-file/v1`
 | comment             | String      | `Optional` Comment                           |
 | signatures          | Signature[] | `Required` Signatures, currently one         |
 
-| Field               | Type          | Comment                                                                         |
-|---------------------|---------------|---------------------------------------------------------------------------------|
-| algorithm           | String        | `Required` Signature algorithm, e.g. `SHA256withECDSA`                          | 
-| signature           | String        | `Required` Signature in base64                                                  |
-| certificates        | Certificate[] | `Required` X509 Certificate in PEM, Singing Cert\[, Intemediate Cert], RootCert |
+| Field               | Type          | Comment                                                                          |
+|---------------------|---------------|----------------------------------------------------------------------------------|
+| algorithm           | String        | `Required` Signature algorithm, e.g. `SHA256withECDSA`                           | 
+| signature           | String        | `Required` Signature in base64                                                   |
+| certificates        | Certificate[] | `Required` X509 Certificate in PEM, Singing Cert\[, Intermediate Cert], RootCert |
 
 
 | Tag | Filed           |
