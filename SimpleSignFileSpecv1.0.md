@@ -6,7 +6,6 @@ Schema: `https://openwebstandard.org/simple-sign-file/v1`
 | Field               | Type        | Comment                                      |
 |---------------------|-------------|----------------------------------------------|
 | schema              | String      | `Required` Constant, Value is Schema         |
-| version             | String      | `Required` Constant, `v1`                    |
 | filename            | String      | `Optional` Filename                          |
 | digest              | String      | `Required` Digest, e.g. `sha256-*`           |
 | timestamp           | Long        | `Required` Unix Epoch Time in millis         |
@@ -40,7 +39,6 @@ Signature file `*.simple-sig` sample:
 ```json
 {
   "schema": "https://openwebstandard.org/simple-sign-file/v1",
-  "version": "v1",
   "filename": "example.zip",
   "digest": "sha256-HEX(SHA256(filename-content))",
   "timestamp": 1700964163340,
